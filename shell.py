@@ -21,7 +21,7 @@ def startup():
 def main_process():
     try:
         while True:
-            cmd_input = input('\033[36m\nsmsh>\033[0m ')
+            cmd_input = input(f'\033[36m\nsmsh#\033[33m{"Home" if os.getcwd().endswith("Home") else os.getcwd()}>\033[0m ')
 
             if not cmd_input:
                 continue
@@ -32,36 +32,53 @@ def main_process():
             args = sh_cmd[1:]
 
 ######### Command Execution ############
-
-# ? The code checks if there are no arguments. These are for standard commands like 'help', 'exit', and 'cls'.
-
-            if len(args) == 0:
-
-                # ? Standard Commands
-                if cmd == 'help':
-                    bc.help()
+        # ? Standard Commands
+            if cmd == 'help':
+                bc.help()
                 
-                elif cmd == 'cls': 
-                    startup()
+            elif cmd == 'cls': 
+                startup()
 
-                elif cmd == 'ls':
-                    os.system('dir')
+            elif cmd == 'ls':
+                bc.ls(args)
 
-                elif cmd == 'exit':
-                    print("Thank You for trying out the Smart Shell!")
-                    break
+            elif cmd == 'cd':
+                bc.cd(args)
+
+            elif cmd == 'mkdir':
+                bc.mkdir(args)
+
+            elif cmd == 'mkfile':
+                bc.mkfile(args)
                 
-                # ? Specialized Commands
-                elif cmd == 'ip?':
-                    cc.get_ip()
+            elif cmd == 'rm':
+                bc.rm(args)
 
-                elif cmd == 'randnum':
-                    util.randnum(args)
-                    
-                else: 
-                    print(f"Command '{cmd}' not found. Type 'help' for a list of commands.")
+            elif cmd == 'cp':
+                bc.cp(args)
             
-            # ? Commands with arguments are handled here
+            elif cmd == 'mv':
+                bc.mv(args)
+
+            elif cmd == 'ren':
+                bc.ren(args)
+
+            elif cmd == 'printc':
+                bc.printc(args)
+            
+            elif cmd == 'exit':
+                print("Thank You for trying out the Smart Shell!")
+                break
+                
+            # ? Specialized Commands
+            elif cmd == 'ip?':
+                cc.get_ip()
+
+            elif cmd == 'randnum':
+                util.randnum(args)
+
+            elif cmd == 'screenfetch':
+                util.screenfetch(args)
 
             # * Curl Related Commands
 
@@ -78,7 +95,8 @@ def main_process():
                 util.randnum(args)
 
             else: 
-                print(f"Incorrect Syntax for command '{cmd}'...")
+                print(f"Command '{cmd}' not found. Type 'help' for a list of commands.")
+            
 
 # *TODO: Fix the except block to handle the KeyboardInterrupt exception
     except KeyboardInterrupt:

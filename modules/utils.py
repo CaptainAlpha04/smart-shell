@@ -18,3 +18,18 @@ def randnum(args):
     except:
         print("Invalid Arguments. Please provide a valid range.")
         print("Usage: randnum or randnum [limit] or randnum [start] [end]")
+
+# ? screenfetch command to display system information and logo
+def screenfetch(args):
+    try:
+        if len(args) == 0:
+            if os.name == 'nt':
+                print(f"Operating System: {os.name}")
+            else:
+                os.system("screenfetch")
+        else:
+            print("Invalid Arguments for command 'screenfetch'.")
+            print("Usage: screenfetch")
+    except:
+        print("Invalid Arguments for command 'screenfetch'.")
+        print("Usage: screenfetch")

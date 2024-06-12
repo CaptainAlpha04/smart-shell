@@ -1,14 +1,14 @@
-**To be Implemented
+*To be Implemented*
 
 1. Files and Directory commands
-    - change Directory
-    - make Files
-    - make Directory
-    - move file/Directory
-    - copy file/Directory
-    - delete file/Directory
-    - rename a file/Directory
-    - display content of a text-file
+    - change Directory  **Implemented**
+    - make Files        **Implemented**
+    - make Directory    **Implemented**
+    - move file/Directory   **Implemented**
+    - copy file/Directory   **Implemented**
+    - delete file/Directory **Implemented**
+    - rename a file/Directory   **Implemented**
+    - display content of a text-file    **Implemented**
 
 2. System Related
     - System Information
