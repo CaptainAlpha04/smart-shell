@@ -55,10 +55,13 @@ def dict(args):
 
 # ? Curl QR Code Generator
 def qrcode(args):
-    try:    
-        # Using CURL command to get the QR Code
-        os.system(f"curl qrenco.de/{args[0]}")
-        print('\033[33mSpecial Thanks to qrenco.de for the QR Code!\033[0m')
+    try:
+        if len(args) == 0:
+            print("Usage: qr? [text]")
+        else:
+            # Using CURL command to get the QR Code
+            os.system(f"curl qrenco.de/{args[0]}")
+            print('\033[33mSpecial Thanks to qrenco.de for the QR Code!\033[0m')
     except: 
         print("Invalid Arguments for command 'qr?'! Please provide valid arguments.")
         print("Usage: qr? [text]")

@@ -11,7 +11,7 @@
     - display content of a text-file    **Implemented**
 
 2. System Related
-    - System Information
+    - System Information 
     - User Information
     - Current Date/Time and date or Time
 
