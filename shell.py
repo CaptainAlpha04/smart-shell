@@ -3,6 +3,7 @@ from modules import basic_cmd as bc
 from modules import curl_cmd as cc
 from modules import utils as util
 from modules import ai_tools as ai
+from modules import egg
 
 def startup():
     if os.name == 'nt':
@@ -106,9 +107,35 @@ def main_process():
             elif cmd == 'randnum': # Generate a random number
                 util.randnum(args)
 
+            elif cmd == 'speed?': # Get the Internet speed test
+                util.speed(args)
+
             #? Chat with AI capabilities
             elif cmd == '@neo': # Chat with the AI
                 ai.neo(args)
+
+            #? Easter Eggs
+            elif cmd == 'rick': # Easter Eggs 1
+                egg.rick()
+            
+            elif cmd == 'astley':   # Easter Eggs 2
+                egg.astley(args)
+
+            elif cmd == 'party': # Easter Eggs 3
+                egg.party(args)
+            
+            elif cmd == 'forrest': # Easter Eggs 4
+                egg.forrest(args)
+            
+            elif cmd == 'donut': # Easter Eggs 5
+                egg.donut(args)
+
+            elif cmd == 'smsh':
+                egg.smsh(args)
+
+            elif cmd == os.getlogin().lower():
+                egg.user(args)
+
             else: # If the command is not found
                 print(f"Command '{cmd}' not found. Type 'help' for a list of commands.")
             

@@ -1,11 +1,15 @@
 import os
 import datetime
 import random
+import speedtest
 
 #? Username command
 def whoami():
     try:
-        print(f"Current User: {os.getlogin()}")
+        if os.name == 'nt': 
+            print(f"Current User: {os.getlogin()}")
+        else:
+            os.system("whoami")
     except:
         print("An error occurred while fetching the current user.")
 
@@ -65,3 +69,29 @@ def screenfetch(args):
     except:
         print("Invalid Arguments for command 'screenfetch'.")
         print("Usage: screenfetch")
+
+#? Get the Internet speed test
+
+def speed(args):
+    try:    
+        st = speedtest.Speedtest()
+        print("Fetching the best server, please wait...")
+        st.get_best_server()
+        print("Performing download and upload speed test...")
+        download_speed = st.download() / 1024 / 1024
+        upload_speed = st.upload() / 1024 / 1024
+        print("Speed test completed!")
+
+        if len(args) == 0:
+            print(f"Download Speed: {download_speed:.2f} Mbps")
+            print(f"Upload Speed: {upload_speed:.2f} Mbps")
+        else:
+            if args[0] == 'dw':
+                print(f"Download Speed: {download_speed:.2f} Mbps")
+            elif args[0] == 'up':
+                print(f"Upload Speed: {upload_speed:.2f} Mbps")
+            else:
+                print("Invalid Arguments for command 'speedtest'.")
+                print("Usage: speedtest or speedtest [dw] or speedtest [up]")
+    except:
+        print("An error occurred while fetching the internet speed.")

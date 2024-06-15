@@ -12,17 +12,17 @@
 
 2. System Related
     - System Information 
-    - User Information
-    - Current Date/Time and date or Time
+    - User Information  **Implemented**
+    - Current Date/Time and date or Time **Implemented**
 
 3. CURL important commands
-    - weather *Implemented
-    - ipAddress *Implemented
-    - dictionary *Implemented
-    - qrcode generator *Implemented
-    - url shortner
-    - quote generator
-    - Internet speedtest
+    - weather **Implemented**
+    - ipAddress **Implemented**
+    - dictionary **Implemented**
+    - qrcode generator **Implemented**
+    - url shortner  
+    - quote generator   
+    - Internet speedtest **Implemented**
 
 4. Other Stuff
     - Color change of terminal
